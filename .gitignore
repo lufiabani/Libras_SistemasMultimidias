@@ -1,0 +1,4 @@
+images/
+datasets/base_dataset.pickle
+models/TrainTestData/
+models/*.sav
