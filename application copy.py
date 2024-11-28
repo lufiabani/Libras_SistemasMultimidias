@@ -169,12 +169,7 @@ def show_results():
     resultados_texto.pack(pady=10)
 
     # Exibir resultados
-    resultados_texto.insert(tk.END, f"Palavras corretas: {palavras_corretas} de {palavras_total}\n\n")
-    resultados_texto.insert(tk.END, "Tempos por palavra:\n")
-    for palavra, tempo in word_times:
-        resultados_texto.insert(tk.END, f"- {palavra}: {tempo} segundos\n")
-
-    
+    resultados_texto.insert(tk.END, f"Palavras corretas: {palavras_corretas} de {palavras_total}\n\n")    
     '''
     recomecar_bt = tk.Button(resultados_tela, text="Reiniciar", command=lambda: [resultados_tela.destroy(), main()])
     recomecar_bt.pack(pady=10)
