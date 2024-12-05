@@ -28,25 +28,23 @@ model = pickle.load(open(model_path, 'rb'))
 # Dicionário de categorias de palavras
 categories = {
     "Animais": ["GATO", "CAO", "PATO", "GALO", "GAMBA", "CABRA", "COALA", "SAPO", "RATO", "TARTARUGA", 
-                 "BALEIA", "RAPOSA", "ELEFANTE", "TIGRE", "LOBO", "COIOTE", "URSO", "ALCE", "LONTRA", 
-                 "ROBALO", "CANARIO", "TATU", "PINGUIM", "POMBA", "VEADO", "TOUPEIRA", "GANSO", "LAGARTO", 
-                 "LEBRE", "CAPIVARA", "COBRA", "FOCA", "SABIA", "SERIEMA", "MARRECO", "RA", "PARDAL", 
-                 "POMBO", "FALCAO", "FLAMINGO", "ARARA", "PELICANO", "MORCEGO", "LEAO", "LEMURE", 
-                 "PAPAGAIO", "BUFALO", "CORVO", "FORMIGA", "LINCE", "GAVIAO", "ORCA", "ANTA", "SALMAO", 
-                 "PERIQUITO", "SURICATA", "MACACO", "LAGOSTA", "SALAMANDRA", "CODORNA", "CACATUA", "PONEI", 
-                 "PACA", "GAIVOTA", "URSO POLAR", "BAGRE", "LEOA", "PERERECA", "URUBU", "MORSA", "EMA", 
-                 "CARPA", "TILAPIA", "MARIPOSA", "GRILO", "PAPAGAIO", "ORNITORRINCO", "FURAO", "IGUANA", 
-                 "TUCANO", "CASCAVEL", "LOBO GUARÁ", "ANEMONA", "GORILA", "ENGUIA", "ARRAIA", "POLVO", 
-                 "TRUTA", "SIRI", "GAROUPA", "PIRARUCU", "ATUM", "JAGUATIRICA", "PUMA", "CERVO", "ANTILOPE", 
-                 "BOI", "VACA", "BORBOLETA", "TUBARAO", "LULA", "CAMARAO", "PORCO", "PAPA TERRA", "PICA PAU", 
-                 "QUERO QUERO", "SERPENTE"],
+                "BALEIA", "RAPOSA", "ELEFANTE", "TIGRE", "LOBO", "COIOTE", "URSO", "ALCE", "LONTRA", 
+                "ROBALO", "CANARIO", "TATU", "PINGUIM", "POMBA", "VEADO", "TOUPEIRA", "GANSO", "LAGARTO", 
+                "LEBRE", "CAPIVARA", "COBRA", "FOCA", "SABIA", "SERIEMA", "MARRECO", "RA", "PARDAL", 
+                "POMBO", "FALCAO", "FLAMINGO", "ARARA", "PELICANO", "MORCEGO", "LEAO", "LEMURE", 
+                "PAPAGAIO", "BUFALO", "CORVO", "FORMIGA", "LINCE", "GAVIAO", "ORCA", "ANTA", "SALMAO", 
+                "PERIQUITO", "SURICATA", "MACACO", "LAGOSTA", "SALAMANDRA", "CODORNA", "CACATUA", "PONEI", 
+                "PACA", "GAIVOTA", "BAGRE", "LEOA", "PERERECA", "URUBU", "MORSA", "EMA", 
+                "CARPA", "TILAPIA", "MARIPOSA", "GRILO", "ORNITORRINCO", "FURAO", "IGUANA", 
+                "TUCANO", "CASCAVEL", "ANEMONA", "GORILA", "ENGUIA", "ARRAIA", "POLVO", 
+                "TRUTA", "SIRI", "GAROUPA", "PIRARUCU", "ATUM", "JAGUATIRICA", "PUMA", "CERVO", "ANTILOPE", 
+                "BOI", "VACA", "BORBOLETA", "TUBARAO", "LULA", "CAMARAO", "PORCO"],
     "Frutas": ["PERA", "BANANA", "UVA", "LIMAO", "MANGA", "MELAO", "MELANCIA", "AMORA", "ROMA", 
                "GOIABA", "PITANGA", "GRAVIOLA", "ACEROLA", "ABACATE", "FRAMBOESA", "FIGO", "TAMARA", "PESSEGO", 
-               "MAMAO", "MORANGO", "CAQUI", "FRUTA PÃO", "TAMARINDO", "CARAMBOLA", "NESPRA", "GUARANA", 
-               "DAMASCO", "FRUTA DO CONDE", "LIMA", "CACAU", "TANGERINA", "BUTIA", "BURITI", "MIRTILO", 
-               "PEQUI", "FIGO DA INDIA", "TUCUMA", "ATEMOIA", "UMBU", "BACURI", "BANANA DA TERRA", "AVELÃ", 
-               "LIMAO CRAVO", "CAQUI", "INGA", "BANANA PRATA", "BANANA OURO", 
-               "LIMAO GALEGO", "LIMAO CRAVO"],
+               "MAMAO", "MORANGO", "CAQUI", "TAMARINDO", "CARAMBOLA", "NESPRA", "GUARANA", 
+               "DAMASCO", "LIMA", "CACAU", "TANGERINA", "BUTIA", "BURITI", "MIRTILO", 
+               "PEQUI", "TUCUMA", "ATEMOIA", "UMBU", "BACURI", "AVELÃ", 
+               "INGA"],
     "Objetos": ["MESA", "CADEIRA", "POTE", "CANETA", "LAPIS", "LIVRO", "TESOURA", "PAPEL", "LAMPADA", 
                 "COPO", "PRATO", "GARFO", "PANELA", "SOFA", "TAPETE", "BOLSA", "CINTO", "ANEL", "BRINCO", 
                 "RELOGIO", "CAMA", "COBERTOR", "ALMOFADA", "FACA", "CADERNO", "PORTA", "QUADRO", "VELA", 
@@ -55,21 +53,27 @@ categories = {
                 "LOUSA", "ALICATE", "MARTELO", "SERRA", "REGUA", "PINCEL", "TINTA", "BALAO", "COLA", 
                 "TESOURA", "ENVELOPE", "CLIPES", "ALFINETE", "PREGO", "PARAFUSO", "VASO", "FLOR", "GARRAFA", 
                 "BULE", "CANECA", "ESPATULA", "BANCO", "MESA", "MALETA", "TABULEIRO", "ESPADA", "LANTERNA", 
-                "SELA", "FLAUTA", "VIOLINO", "GUITARRA", "TAMBOR", "APITO", "RAQUETE", "REDE", "PILÃO", 
+                "SELA", "FLAUTA", "VIOLINO", "GUITARRA", "TAMBOR", "APITO", "RAQUETE", "REDE", "PILAO", 
                 "MOEDOR", "RALADOR", "COADOR", "ESCORREDOR", "MORINGA", "FUNIL", "LENTE", "SACO", "BALANCA", 
                 "CORDA", "CORDÃO", "RELOGIO", "BUSSOLA", "CESTO", "COFRE", "VASSOURA", "RODO", "TESOURA", 
                 "ARADO", "PLAINA", "BROCA", "FIVELA", "TUBO", "MALA", "GEL", "PA", "DISCO", "FITA", "BACIA", 
                 "TAMPA", "REDE", "LUVAS", "VARA", "TABUA", "GRAVATA", "FIO", "PAPEL", "LATA", "TIGELA", "CANO", 
-                "SABONETE", "ESCOVA DE DENTE", "TORNEIRA", "PERFUME"],
+                "SABONETE", "TORNEIRA", "PERFUME"],
     "Cores": ["ANIL", "VERDE", "AMARELO", "PRETO", "BRANCO", "ROSA", "MARROM", "BEGE", "VIOLETA", "LILAS", 
-              "SALMAO", "DOURADO", "PRATA", "MAGENTA", "TURQUESA", "COBRE", "PURPURA", "VERDE-AGUA", 
+              "SALMAO", "DOURADO", "PRATA", "MAGENTA", "TURQUESA", "COBRE", "PURPURA", 
               "MOSTARDA", "SEPIA", "CORAL", "LAVANDA", "CREME", "AREIA", "MARFIM", "OURO", "CARAMELO", "MENTA", 
               "TERRACOTA", "BORDO", "GOIABA", "RUBI", "TURMALINA", "OLIVA", "UVA", "CIANO"]
 }
 
+palavras_usadas = []
+
 # Função para obter nova palavra e resetar progresso
 def get_new_word():
-    return random.choice(palavras_selecionadas), 0, time.time()
+    while True:
+        palavra = random.choice(palavras_selecionadas)
+        if palavra not in palavras_usadas:  # Verifica se a palavra já foi usada
+            palavras_usadas.append(palavra)  # Adiciona à lista de palavras usadas
+            return palavra, 0, time.time()
 
 def play_game():
     global palavras_selecionadas, palavras_corretas, palavras_total, palavra_tempo
@@ -158,9 +162,9 @@ def play_game():
 
     cap.release()
     cv2.destroyAllWindows()
-    show_results()
     
 
+'''
 def show_results():
     resultados_tela = tk.Toplevel()
     resultados_tela.title("Resultados")
@@ -170,13 +174,15 @@ def show_results():
 
     # Exibir resultados
     resultados_texto.insert(tk.END, f"Palavras corretas: {palavras_corretas} de {palavras_total}\n\n")    
-    '''
+
     recomecar_bt = tk.Button(resultados_tela, text="Reiniciar", command=lambda: [resultados_tela.destroy(), main()])
     recomecar_bt.pack(pady=10)
-    '''
 
     fechar_bt = tk.Button(resultados_tela, text="Fechar", command=resultados_tela.destroy)
     fechar_bt.pack(pady=10)
+
+    
+'''
 
 def start_game():
     global categoria_selecionada, palavras_selecionadas, palavras_total
@@ -188,6 +194,8 @@ def start_game():
         play_game()
     except ValueError:
         messagebox.showerror("Erro", "Por favor, insira um valor numérico para a quantidade de palavras.")
+
+        
 
 def main():
     global tela_principal, quantidade_palavra, categoria
